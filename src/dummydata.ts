@@ -1,5 +1,5 @@
-export default function Dummydata() {
-  const data = [
+
+ export const data = [
     {
       OrderDate: "2022-08-04T00:00:00.000Z",
       Volume: 409809,
@@ -121,5 +121,4 @@ export default function Dummydata() {
       Volume: 294334,
     },
   ];
-  return data;
-}
+
