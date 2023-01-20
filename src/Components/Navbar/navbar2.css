@@ -52,12 +52,14 @@ nav {
 	align-items: center;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
 	header .nav-btn {
 		visibility: visible;
 		opacity: 1;
 	}
-
+	.nav__toggler{
+		display: block;
+	}
 	header nav {
 		position: fixed;
 		top: 0;
@@ -70,7 +72,7 @@ nav {
 		justify-content: center;
 		gap: 1.5rem;
 		background-color: var(--mainColor);
-		transition: 1s;
+		transition: 5s;
 		transform: translateY(-100vh);
 	}
 
@@ -87,4 +89,13 @@ nav {
 	nav a {
 		font-size: 1.5rem;
 	}
+}
+.nav__toggler{
+	width:2rem;
+	background:#7982a6 ;
+	height:2rem ;
+	margin:0.4rem ;
+	cursor:pointer ;
+	display: none;
+
 }
