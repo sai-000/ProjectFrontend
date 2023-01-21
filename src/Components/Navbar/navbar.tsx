@@ -3,26 +3,11 @@ import "./navbar.css";
 import { NavLink } from 'react-router-dom';
 import {FaBars, FaTimes} from "react-icons/fa";
 import { ToggleButton } from "react-bootstrap";
+import { render } from "@testing-library/react";
 
-export default function Nav()  {
-  const [ismobile,Setismobile]=useState(false);
-  // const dropdown=document.querySelector(".toggler");
-  
-  // const navMenu=document.querySelector(".nav-menu");
-  // dropdown?.addEventListener("click",()=>{
-  //   console.log("clicked");
-  //   dropdown.classList.toggle("active");
-  //   navMenu.classList.toggle("active");
-  // })
-  // document.querySelectorAll(".nav-Link").forEach(n=>n
-  //   .addEventListener("click",()=>{
-  //     dropdown?.classList.remove("active");
-  //     navMenu?.classList.remove('active');
-  //   }))
-  
-  
-  
+export default function Nav() {
  
+  const [ismobile,Setismobile]=useState(false);
  
     return <><header>
     <nav className="navbar">
@@ -47,4 +32,3 @@ export default function Nav()  {
     </header>
     </>
   }
-
