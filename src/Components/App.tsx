@@ -21,7 +21,7 @@ export default class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Mainpage />}></Route>
+            <Route path='/Chart1' element={<Mainpage />}></Route>
             <Route path='/Chart1' element={<Chart1 />}></Route>
             <Route path='/chart2' element={<Chart2 />}></Route>
             <Route path='/chart3' element={<Chart3 />}></Route>
