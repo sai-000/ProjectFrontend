@@ -1,4 +1,4 @@
-import { data1 } from "../data";
+//import { data1 } from "../data";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 
@@ -53,7 +53,7 @@ export default function Statistics() {
             </td>
           </tr>
 
-          {data1.map((k) => {
+          {/* {data1.map((k) => {
             return (
               <tr>
                 <td>{k.OrderDate.slice(0, 10)}</td>
@@ -61,7 +61,7 @@ export default function Statistics() {
                 <td>{k.Volume}</td>
               </tr>
             );
-          })}
+          })} */}
         </table>
       </div>
       <div></div>

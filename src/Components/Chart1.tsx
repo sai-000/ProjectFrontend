@@ -1,14 +1,13 @@
 import { Component, useState} from "react";
 import {FaBars} from 'react-icons/fa';
-import './chart1table.css';
-import {data1} from "../data";
+
+//import {data1} from "./Chart1 Components/data";
 import { Row } from "react-bootstrap";
-import './Navbar/navbar.css';
+import './Mainpage.css';
 
 export default function Chart1() {
     const header=["OrderDate","Volume"];
     
- 
     const [ismobile,Setismobile]=useState(false);
     return (<>
       <div>
