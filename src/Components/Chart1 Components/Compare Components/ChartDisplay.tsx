@@ -9,25 +9,18 @@ import {
   Legend,
 } from "chart.js";
 import { useState } from "react";
-//import { data1 } from "../data";
 import { useEffect } from "react";
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+interface objtype{
+  xaxis:string[],
+  totalorders:number[],
+  attemptedorders:number[],
+  completedorders:number[]
+}
+export default function ChartDisplay({ xaxis, totalorders,attemptedorders,completedorders }: objtype) {
 
-export default function ChartDisplay({ xaxis, yaxis }: {xaxis:string[],yaxis:number[]}) {
 
 
-
-useEffect(() => {
-   // console.log(`rerendering`);
-    
-    renderchart(xaxis, yaxis);
-  }, [xaxis, yaxis]);
-
-  const renderchart = (xaxis: string[], yaxis: number[]) => {
-    //console.log(`called chart`)
-    return (
-    <Bar data={Data}/>);
-  };
 
 const option={
   Plugin:{
@@ -42,31 +35,45 @@ const Data={
     labels:xaxis,
     datasets:[
         {
-            label:"Volume",
-            data:yaxis,
-            backgroundColor:' #55B74E'
-        }
+            label:"Total Orders",
+            data:totalorders,
+            backgroundColor:'#55B74E'
+        },
+        {
+          label:"Completed Orders",
+          data:completedorders,
+          backgroundColor:'#3C40C6'
+      },
+      {
+        label:"Attempted Orders",
+        data:attemptedorders,
+        backgroundColor:'#FA8231'
+    },
+    
+
     ]
 } 
-
+var options={
+  responsive:true,
+  maintainAspectRatio:true,
+  skipNull:true,
+   plugins: {
+    title: {
+      display: true,
+      text: "Order Trends Comparison"
+      
+      
+    },
+    legend: {
+      display: true
+    }
+    
+  }
+  
+}
 return (<div>
     <div>
-      <Bar data={Data} options={{
-        responsive:true,
-        maintainAspectRatio:true,
-         plugins: {
-          title: {
-            display: true,
-            text: "Order Trends Comparison"
-            
-          },
-          legend: {
-            display: false
-          }
-          
-        }
-        
-      }}/>
+      <Bar data={Data} options={options}/>
     </div>
     
     </div>

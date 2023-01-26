@@ -70,6 +70,13 @@
   text-align: left;
 }
 
+#btns11 {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
 #btns-grp2 {
   text-align: left;
 
@@ -136,6 +143,7 @@ tr:nth-child(even) {
     font-size: 2rem;
     flex-grow: 1;
     margin-bottom: 12px;
+    margin-right: 300px;
   }
   
   .nav-menu {

@@ -28,7 +28,7 @@ function NavBar1() {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/about"
+                to="/Chart2"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -37,7 +37,7 @@ function NavBar1() {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/about"
+                to="/Chart3"
                 className="nav-links"
                 onClick={handleClick}
               >

@@ -1,9 +1,10 @@
 import { Component, ReactNode } from "react";
+import NavBar1 from "../Chart1 Components/Navbar1";
 
 export default  class Chart3 extends Component{
     render() {
         return (<div>
-            <h1>Chart3</h1>
+           <NavBar1 />
         </div>)
     }
 }

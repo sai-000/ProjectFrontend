@@ -1,4 +1,4 @@
-const data = [
+var data = [
     {
         "OrderDate": "2020-08-08T00:00:00.000Z",
         "AttemptedOrders": 183,
