@@ -28,15 +28,12 @@ const Compare = (props: { orderList: AppState[] }) => {
   const [CompletedOrders, setCompletedOrders] = useState<number[]>([defaultCompleted]);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     data1.map((obj) => {
-      if (obj.OrderDate.slice(0, 10) === event.target.value) {
-        if (!xaxisdata.find((xval) => xval === obj.OrderDate.slice(0, 10))) {
+      if (obj.OrderDate.slice(0, 10) === event.target.value && (!xaxisdata.find((xval) => xval === obj.OrderDate.slice(0, 10)))) {
           setXData([...xaxisdata, obj.OrderDate.slice(0, 10)]);
           setTotalorder([...TotalOrder, obj.TotalOrders]);
           setAttemptedorders([...AttemptedOrders, obj.AttemptedOrders]);
           setCompletedOrders([...CompletedOrders, obj.CompletedOrders]);
-        } else {
-          alert("Date already selected , check graph for the data");
-        }
+        
       }
     });
   };
