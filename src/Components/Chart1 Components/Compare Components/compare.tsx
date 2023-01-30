@@ -9,38 +9,27 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
-//import { data1 } from "../data";
-import { FaBars } from "react-icons/fa";
-import { setDatasets } from "react-chartjs-2/dist/utils";
 import ChartDisplay from "./ChartDisplay";
-import { render } from "@testing-library/react";
-import BoxDisplay from "./BoxDisplay";
-import axios from "axios";
-import NavBar1 from "../Navbar1";
 import { AppState } from "../interface";
-import data from "../data";
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 //The Compare component takes data from backend api,stores in the local storage and displays analytics on selected Dates.
 
-const Compare = (props: { orderList: any }) => {
-
-
-  const [xaxisdata, setXData] = useState<string[]>([]);
-  const [TotalOrder, setTotalorder] = useState<number[]>([]);
-  const [AttemptedOrders, setAttemptedorders] = useState<number[]>([]);
-  const [CompletedOrders, setCompletedOrders] = useState<number[]>([]);
-  const Datapair = new Map<string, number>();
-
+const Compare = (props: { orderList: AppState[]}) => {
   const data1: AppState[] = props.orderList;
-  // const url='';
-  // axios.get(url).then(()=>{
-  //   console.log(response)
-  //   SetRealdata(response)
-  // }).catch((error)=>{
-  //   console.log(error)
-  // });
+  
+  let defaultx : any = data1.at(data1.length - 1)?.OrderDate.slice(0, 10).toString();
+  let defaultTotal : any = data1.at(data1.length - 1)?.TotalOrders
+  let defaultAttempted : any = data1.at(data1.length - 1)?.AttemptedOrders
+  let defaultCompleted : any = data1.at(data1.length - 1)?.CompletedOrders
+
+  const [xaxisdata, setXData] = useState<string[]>([defaultx]);
+  const [TotalOrder, setTotalorder] = useState<number[]>([defaultTotal]);
+  const [AttemptedOrders, setAttemptedorders] = useState<number[]>([defaultAttempted]);
+  const [CompletedOrders, setCompletedOrders] = useState<number[]>([defaultCompleted]);
+  const Datapair = new Map<string, number>();
+  
+ 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     data1.map((obj) => {
       if (obj.OrderDate.slice(0, 10) === event.target.value) {
@@ -56,7 +45,7 @@ const Compare = (props: { orderList: any }) => {
     });
   };
 
-  const [ismobile, Setismobile] = useState(false);
+
 
   return (
     <>
@@ -66,7 +55,9 @@ const Compare = (props: { orderList: any }) => {
       <div className="flex-container">
         {" "}
         <div className="flex-child1">
-          <div className="datepicker"><input type="date" min={data1.at(0)?.OrderDate.slice(0, 10).toString()} max={data1.at(data1.length - 1)?.OrderDate.slice(0, 10).toString()} onChange={(e) => handleChange(e)} /></div>
+          <div className="datepicker"><input type="date" min={data1.at(0)?.OrderDate.slice(0, 10).toString()}
+           max={data1.at(data1.length - 1)?.OrderDate.slice(0, 10).toString()}
+           defaultValue={data1.at(data1.length - 1)?.OrderDate.slice(0, 10).toString()} onChange={(e) => handleChange(e)} /></div>
           <br></br>
           <br></br>
           <br></br>
@@ -88,7 +79,6 @@ const Compare = (props: { orderList: any }) => {
 
                   })
                   console.log(val)
-                  console.log("del button clicked");
                 }}
               >
                 &times;
