@@ -1,4 +1,4 @@
-import { Bar, Line } from "react-chartjs-2";
+import { Bar} from "react-chartjs-2";
 import {
   Chart,
   CategoryScale,
@@ -8,8 +8,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { useState } from "react";
-import { useEffect } from "react";
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 interface objtype{
   xaxis:string[],
@@ -18,19 +16,6 @@ interface objtype{
   completedorders:number[]
 }
 export default function ChartDisplay({ xaxis, totalorders,attemptedorders,completedorders }: objtype) {
-
-
-
-
-const option={
-  Plugin:{
-    title:{
-      display:true,
-      text:"Order Trend Analytics"
-    }
-
-  }
-}
 const Data={
     labels:xaxis,
     datasets:[

@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,22 +11,12 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import Chart from 'chart.js/auto';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Bar, Line, Pie } from 'react-chartjs-2';
-// import data1 from '../data';
 import './App.css';
-// import { AppProps } from './interface';
 import { AppState } from '../interface';
-import NavBar from '../Navbar1';
 import Compare from '../Compare Components/compare';
-import { useMountedLayoutEffect } from 'react-table';
-import axios from 'axios';
-
-
-
-
-
+import NavBar1 from '../Navbar1';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -38,7 +28,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
 const options = {
   responsive: true,
   scales: {
@@ -62,8 +51,6 @@ const options = {
     },
   },
 };
-
-
 const  Chart1 = (props : {orderList : AppState[]}) => {
 
   const [isCompare, setCompare] = useState(true);
@@ -400,7 +387,7 @@ useEffect(()=>{
 
   return (
     <div>
-      <NavBar />
+      <NavBar1 />
       <div id='btn-grp'>
         <button onClick={()=>{StatisticsPage()}} type="button" id='btns' className="btn btn-outline-primary btn-lg" >Statistics</button>
         <button onClick={()=>{ComparePage()}} type="button" id='btns' className="btn btn-outline-primary btn-lg">Compare</button>

@@ -139,8 +139,9 @@ tr:nth-child(even) {
     align-items: center;
     margin-left: 20px;
     cursor: pointer;
+    text-align: center;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     flex-grow: 1;
     margin-bottom: 12px;
     margin-right: 300px;

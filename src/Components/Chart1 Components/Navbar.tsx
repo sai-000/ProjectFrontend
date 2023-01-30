@@ -11,7 +11,7 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink to="/Chart1" className="nav-logo">
-            Dashboard
+            E-Commerce Analytics
             <i className="fas fa-code"></i>
           </NavLink>
 
@@ -31,7 +31,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Compare
+                Customize&Compare
               </NavLink>
             </li>
           </ul>

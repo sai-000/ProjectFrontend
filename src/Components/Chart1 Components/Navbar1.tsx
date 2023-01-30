@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-// import"./Chart1 Components/Statistics Components/App.css";
-
-
 function NavBar1() {
   const [click, setClick] = useState(false);
 
@@ -12,7 +9,7 @@ function NavBar1() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink to="/Chart1" className="nav-logo">
-            Dashboard
+          E-Commerce Analytics
             <i className="fas fa-code"></i>
           </NavLink>
 .
@@ -23,7 +20,16 @@ function NavBar1() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Order-Trends
+                OrderTrend
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/Chart4"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Company Level OrderTrends 
               </NavLink>
             </li>
             <li className="nav-item">
@@ -32,7 +38,7 @@ function NavBar1() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                New User Analytics
+                New Customers
               </NavLink>
             </li>
             <li className="nav-item">
@@ -41,9 +47,10 @@ function NavBar1() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Inactive User Analytics
+                Inactive Customers
               </NavLink>
             </li>
+            
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
