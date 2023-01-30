@@ -69,7 +69,6 @@ const  Chart1 = (props : {orderList : AppState[]}) => {
   const [isCompare, setCompare] = useState(true);
 
   const data1 : AppState[] = props.orderList;
-  var Ddata: AppState[] = [];
 
   
   var first15 = data1.filter(function (el, index) {
@@ -101,8 +100,14 @@ const  Chart1 = (props : {orderList : AppState[]}) => {
     return index >= data1.length - 856;
   });
 
+
+  var Ddata: AppState[] = [];
+
+useEffect(()=>{
+  console.log('called update function')
+  update(30)},[props.orderList]);
+
    function update(num: Number) {
-    console.log("Update called");
     switch (num) {
       case 15:
         Ddata.length = 0;
@@ -378,15 +383,12 @@ const  Chart1 = (props : {orderList : AppState[]}) => {
 
 
   function ComparePage() {
-    console.log('clicled');
     setCompare(false)
     setVisible(false);
   }
 
 
   function StatisticsPage() {
-
-    console.log('clicked');
     update(30);
     setCompare(true);
     setVisible(true);
@@ -404,7 +406,6 @@ const  Chart1 = (props : {orderList : AppState[]}) => {
         <button onClick={()=>{ComparePage()}} type="button" id='btns' className="btn btn-outline-primary btn-lg">Compare</button>
         <div />
         { isCompare ?  ( isBar ? <RenderBarChart/>: <RenderChart /> ): <Compare orderList={data1}/>}
-        
       <div>
           {visible &&<button onClick={() => SetBar(false)} type="button" id='btns1' className="btn btn-outline-primary btn-sm">Line-Chart</button>}
           {visible &&<button onClick={() => SetBar(true)} type="button" id='btns1' className="btn btn-outline-primary btn-sm">Bar-Chart</button>}</div>
