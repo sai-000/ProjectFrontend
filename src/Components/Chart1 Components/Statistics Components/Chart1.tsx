@@ -16,7 +16,7 @@ import { Bar, Line, Pie } from 'react-chartjs-2';
 import './App.css';
 import { AppState } from '../interface';
 import Compare from '../Compare Components/compare';
-import NavBar1 from '../Navbar1';
+import NavBar1 from '../MainNavBar';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -387,10 +387,10 @@ useEffect(()=>{
 
   return (
     <div>
-      <NavBar1 />
+      <NavBar1 /><div className='demo'>
       <div id='btn-grp'>
         <button onClick={()=>{StatisticsPage()}} type="button" id='btns' className="btn btn-outline-primary btn-lg" >Statistics</button>
-        <button onClick={()=>{ComparePage()}} type="button" id='btns' className="btn btn-outline-primary btn-lg">Compare</button>
+        <button onClick={()=>{ComparePage()}} type="button" id='btns' className="btn btn-outline-primary btn-lg">Customize&Compare</button>
         <div />
         { isCompare ?  ( isBar ? <RenderBarChart/>: <RenderChart /> ): <Compare orderList={data1}/>}
       <div>
@@ -404,7 +404,8 @@ useEffect(()=>{
           {visible &&<button onClick={() => update(60)} type="button" id='btns1' className="btn btn-outline-primary btn-sm">60 Days</button>}
           {visible &&<button onClick={() => update(30)} type="button" id='btns11' className="btn btn-outline-primary btn-sm">30 Days</button>}
           {visible &&<button onClick={() => update(15)} type="button" id='btns1' className="btn btn-outline-primary btn-sm">15 Days</button>}
-        </div>
+        </div></div>
+
       </div>
       </div>
   );

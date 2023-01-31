@@ -21,6 +21,7 @@
     justify-content: space-around;
   }
   .flex-container{
+    margin-top: 0%;
     display: flex;
    padding: 5%;
    

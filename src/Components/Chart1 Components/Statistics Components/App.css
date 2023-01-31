@@ -48,7 +48,7 @@
 
 #btn-grp {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 2%;
   margin-bottom: 30px;
 }
 
@@ -97,6 +97,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
 td, th {
@@ -146,7 +147,16 @@ tr:nth-child(even) {
     margin-bottom: 12px;
     margin-right: 300px;
   }
-  
+  .demo{
+    margin-top: 0;
+  }
+  .companyline{
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+
+  }
   .nav-menu {
     display: flex;
     list-style: none;
