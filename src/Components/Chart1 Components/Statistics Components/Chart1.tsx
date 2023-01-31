@@ -1,5 +1,4 @@
 import React, { Component, useEffect, useState, useRef } from 'react';
-import "./Chart1.css";
 
 import {
   Chart as ChartJS,
