@@ -58,6 +58,14 @@
    margin-bottom: 20px;
  }
 
+ #btns2 {
+  display: inline-block;
+  align-items: right;
+  margin-right: -300px;
+  margin-left: 150px;
+  margin-bottom: 20px;
+}
+
 #btns.active {
   color: #55B74E;
   border: 1px #55B74E;
